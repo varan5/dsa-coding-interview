@@ -1,0 +1,48 @@
+
+Time: O(logn)   Space: O(1)
+
+def binarySearch(array, valueToSearch):
+    leftIndex = 0
+    rightIndex = len(array) -1
+    for x in array:
+        midIndex = leftIndex + rightIndex // 2
+        if array[midIndex] == valueToSearch:   
+            return midIndex
+        if array[midIndex] > valueToSearch:
+            rightIndex = midIndex -1
+        else:
+           leftIndex = midIndex + 1
+
+    return -1   
+
+
+
+
+def binarySearchRecursive(array, valueToSearch):
+    leftIndex = 0
+    rightIndex = len(array) -1
+    return binarySearchRecursiveHelper(array, valueToSearh, leftIndex, rightIndex)
+
+def binarySearchRecursiveHelper(array, valueToSearch, leftIndex, rightIndex):
+    midIndex = leftIndex + rightIndex // 2
+    if array[midIndex] == valueToSearch:
+        return midIndex
+    if arrayIndex > valueToSearch:
+        binarySearchRecursiveHelper(array, valueToSearch, leftIndex, midIndex -1)
+    if arrayIndex < valueToSearch:
+        binarySearchRecursiveHelper(array, valueToSearch, midIndex +1, rightIndex)
+    else:
+        return -1
+
+
+
+
+
+
+
+
+
+
+
+
+

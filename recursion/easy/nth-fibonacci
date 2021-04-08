@@ -1,0 +1,36 @@
+
+# Time: O(2^n)  Space: O(n) --> call stack
+
+def getNthFibonacci(number):
+    if number == 1 or number == 0:
+        return 1
+    else:
+        return getNthFibonacci(number -1) + getNthFibonacci(number -2)
+
+
+
+
+# Time: O(n)    Space: O(1)
+
+def getNthFibonacci(number  # 4):
+    firstNumber = 0
+    secondNumber = 1
+    counter = 1
+    while counter <= number:    # loops 4 times    
+        thirdNumber = firstNumber + secondNumber # 1 -> 2 -> 3 -> 5
+        firstNumber = secondNumber  # 1 -> 1 -> 2
+        secondNumber = thirdNumber  # 1 -> 2 -> 3
+        counter += 1
+
+    return thirdNumber
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,64 @@
+
+# Time: O(n)    Space: O(1)
+
+def isPalindrome(string):
+    if string is '':
+        return None
+    if len(string) == 1:
+        return True     # Strings with length 1, are palindromes
+    leftIndex = 0
+    rightIndex = len(string) -1
+    while leftIndex < rightIndex:
+        if string[leftIndex] != string[rightIndex]:
+            return False
+        leftIndex += 1
+        rightIndex -= 1
+    return True
+
+
+
+# Time: O(n)  --> Using a single loop, where 'n' is the length of the string 
+# Space: O(n) --> Call stack used in recursive approach, where 'n' is the length of the string
+
+def isPalindromeRecursive(string):
+    if string is '':
+        return None
+    if len(string) == 1:    
+        return True     # Strings with length 1, are palindromes
+    leftIndex = 0
+    rightIndex = len(string) -1
+    return isPalindromeRecursiveHelper(string, leftIndex, rightIndex)
+    
+def isPalindromeRecursiveHelper(string, leftIndex, rightIndex):
+    if string[leftIndex] != string[rightIndex]:
+        return False
+    if leftIndex <= rightIndex:
+        isPalindromeRecursiveHelper(string, leftIndex +1, rightIndex -1)
+    return True
+
+
+
+
+
+
+
+**************************************************************************************************
+# More Practice
+
+
+
+def isPalindromeRecursive(string):
+    if string == '':
+        return None
+    if len(string) == 1:
+        return True     # Strings with length 1, are palindromes
+    leftIndex = 0
+    rightIndex = len(string) -1
+    return isPalindromeRecursiveHelper(string, leftIndex, rightIndex)
+
+def isPalindromeRecursiveHelper(string, leftIndex, rightIndex):
+    if string[leftIndex] != string[rightIndex]:
+        return False
+    if leftIndex <= rightIndex:
+        isPalindromeRecursiveHelper(string, leftIndex +1, rightIndex -1)
+    return True

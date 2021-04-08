@@ -1,0 +1,58 @@
+# Time: O(n^2)  Space: O(1)
+
+def twoSum(array, targetSum):
+    for i in range(len(array) -1):
+        firstNum = array[i]
+        for j in range(i, len(array)):
+            secondNum = array[j]
+            if firstNum + secondNum == targetSum:
+                return [firstNum, secondNum]
+    return []
+
+
+
+
+
+# Time: O(n*logn)   Space: O(1)
+
+def twoSum(array, targetSum):
+    array.sort()
+    leftIndex = 0
+    rightIndex = len(array) -1
+    for x in array:
+        temporarySum = array[leftIndex] + array[rightIndex]
+        if temporarySum == targetSum:
+            return [array[leftIndex], array[rightIndex]]
+        if temporarySum > targetSum:
+            rightIndex -= 1
+        if temporarySum < targetSum:
+            leftIndex += 1
+
+    return []
+
+
+
+
+
+def twoSum(array, targetSum):
+    for x in array:
+        firstNum = array[x]
+        secondNum = targetSum - firstNum
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

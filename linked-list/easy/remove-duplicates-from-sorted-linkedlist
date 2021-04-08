@@ -1,0 +1,51 @@
+class LinkedList:
+    def __init__(self, value):
+        self.value = value
+        self.next = None
+
+
+
+
+# Dry run
+# 3 -> 3 -> 3 -> 5 -> 7
+# 3 -> 5 -> 7
+
+
+
+# Time: O(n)    Space: O(1)
+
+def removeDuplicatesFromLinkedList(linkedList):
+    if linkedList is None:
+        return None
+    currentNode = linkedList
+    while currentNode is not None:
+        potentialNextNode = currentNode.next
+        while currentNode.value == potentialNextNode.value and potentialNextNode is not None:
+            potentialNextNode = potentialNextNode.next
+
+        currentNode.next = potentialNextNode
+        currentNode = currentNode.next
+
+    return linkedList
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
