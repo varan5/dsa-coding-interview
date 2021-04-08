@@ -1,0 +1,68 @@
+
+# Time: O(n^2) --> Using two loops, where 'n' is the length of the array
+# Space: O(1)  --> No additional space is used, apart from some variables, using constant space
+
+def firstDuplicateValue(array):
+    for i in range(len(array) -1):
+        value = array[i]
+        for j in range(i + 1, len(array)):
+            valueToCompare = array[j]
+            if value == valueToCompare:
+                return value
+    return -1
+
+
+
+# Time: O(n)  --> Used 1 loop, where 'n' is the length of the array
+# Space: O(n) --> Used extra space for set, to find duplicates, where 'n' is the length of the array
+
+def firstDuplicateValue(array):
+    seen = set()    
+    for element in array:
+        if element in seen:
+            return element
+        else:
+            seen.add(element)
+    return -1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

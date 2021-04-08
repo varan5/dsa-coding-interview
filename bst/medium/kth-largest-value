@@ -1,0 +1,33 @@
+class BinaryTree:
+    def __init__(self, value, left=None, right=None):
+        self.value = value
+        self.left = left
+        self.right = right
+
+
+def findKthLargestValueInBst(tree, k):
+    if tree == None:
+        return None
+    sortedNodeValues = []
+    inOrderTraverse(tree, sortedNodeValues)
+    indexOfKthLargestValue = len(sortedNodeValues - k)
+    kthLargestValue = sortedNodeValues[indexOfKthLargestValue]
+    return kthLargestValue
+
+def inOrderTraverse(tree, sortedNodeValues):
+    inOrderTraverse(tree.left, sortedNodeValues)
+    sortedNodeValues.append(tree.value)
+    inOrderTraverse(tree.right, sortedNodeValues)
+
+
+
+
+
+'''
+# Logic for finding kthLargestValue from the sorted array
+array = [1, 2, 3, 5, 6, 7, 88]
+length = len(array)     # length = 7
+kthLargestValue = length - k
+array[kthLargestValue]   # value == 6
+
+'''
