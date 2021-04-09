@@ -1,0 +1,27 @@
+
+class LinkedList:
+    def __init__(self, value, next=None):
+        self.value = value
+        self.next = next
+
+
+# Time: O(n)    Space: O(1)
+
+def removeNthNodeFromEnd(head, n):
+    firstNode = head
+    secondNode = head
+    counter = 1
+    while counter <= n:
+        secondNode = secondNode.next
+        counter += 1
+    
+    while secondNode.next is not None:
+        secondNode = secondNode.next
+        firstNode = firstNode.next
+    
+    firstNode.next = firstNode.next.next
+
+    return head
+
+
+

@@ -1,0 +1,67 @@
+
+# Time: O(n^2)  Space: O(1)
+
+def selectionSort(array):
+    for i in range(len(array)):
+        minIndex = i
+        for j in range(i+1, len(array)):
+            if array[j] < array[minIndex]:
+                minIndex = j
+        swap(i, minIndex, array)
+    return array
+
+def swap(i, j, array):
+    array[i], array[j] = array[j], array[i]
+
+
+
+
+# More practise
+'''
+
+def selectionSort(array):
+    for i in range(len(array)):
+        minIndex = i
+        for j in range(i+1, len(array)):
+            if array[j] < array[minIndex]:
+                minIndex = j
+        swap(array, i, minIndex)
+
+def swap(array, i, j):
+    array[i], array[j] = array[j], array[i]
+
+
+
+def selectionSort(array):
+    for i in range(len(array)):
+        minIndex = i
+        for j in range(i+1, len(array)):
+            if array[minIndex] > array[j]:
+                minIndex = j
+        swap(i, minIndex, array)
+
+def swap(i, j, array):
+    array[i], array[j] = array[j], array[i]
+
+
+
+
+'''
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
