@@ -1,0 +1,235 @@
+
+class BST: 
+    def __init__(self, value):
+        self.value = value
+        self.left = left
+        self.right = right
+
+# Time: O(n)   -->  where, 'n' is the number of nodes in a binary search tree
+# Space: O(d)  -->  where, 'd' is the depth of the binary search tree
+
+def validateBst(tree):
+    return validateBstHelper(tree, float('-inf'), float('inf'))
+
+def validateBstHelper(tree, minValue, maxValue):
+    if tree is None:
+        return True
+
+    if tree.value < minValue or tree.value >= maxValue: 
+        return False
+
+    leftTreeIsValid = validateBstHelper(tree.left, minValue, tree.value)    
+    rightTreeIsValid = validateBstHelper(tree.right, tree.value, maxValue)
+    return leftTreeIsValid and rightTreeIsValid
+
+
+
+
+# More Practice
+
+'''
+
+
+
+# Code in Python
+
+class BST: 
+    def __init__(self, value):
+        self.value = value
+        self.left = left
+        self.right = right
+
+
+def validateBst(tree):
+        return validateBstHelper(tree, float('-inf'), float('inf'))
+
+def validateBstHelper(tree, minValue, maxValue):
+        if tree is None:
+            return True     # Consider, a BST with no nodes as a valid BST
+
+        if tree.value < minValue or tree.value >= maxValue:
+            return False
+        
+        isLeftTreeValidBst = validateBstHelper(tree.left, minValue, tree.value)
+        isRightTreeValidBst = validateBstHelper(tree.right, tree.value, maxValue)
+        return isLeftTreeValidBst and isRightTreeValidBst
+
+
+
+# Code in Java
+
+class BST {
+    public int value;
+    public BST left;
+    public BST right;
+
+    public BST(int value) {
+        this.value = value;
+        this.left = null;
+        this.right = null;
+    }
+}
+
+
+class Program {
+
+    public static boolean validateBst(BST tree) {
+        return validateBstHelper(tree, Interger.Min_VALUE, Integer.MAX_VALUE);
+    }
+
+    public static boolean validateBstHelper(BST tree, int minValue, int maxValue) {
+        if (tree == null)
+            return true;
+
+        if (tree.value < minValue || tree.value >= maxValue) 
+            return false;
+
+        boolean isLeftTreeValidBst = validateBstHelper(tree.left, minValue, tree.value);
+        boolean isRightTreeValidBst = validateBstHelper(tree.right, tree.value, maxValue);
+        return isLeftTreeValidBst && isRightTreeValidBst;
+
+    }
+}
+
+
+
+
+# Code in C++
+
+
+class BST {
+    public:
+        int value;
+        BST *left;
+        BST *right;
+    
+        BST(int value) {
+            this.value = value;
+        }
+};
+
+bool validateBst(BST *tree) {
+    return validateBstHelper(tree, INT_MIN, INT_MAX);
+}
+
+bool validateBstHelper(BST *tree, int minValue, int maxValue) {
+    if (tree == nullptr)
+        return true;
+    
+    if (tree->value < minValue or tree->value >= maxValue) 
+        return false;
+
+    bool isLeftTreeValid = validateBstHelper(tree->left, minValue, tree->value);
+    bool isRightTreeValid = validateBstHelper(tree->right, tree->value, maxValue);
+    return isLeftTreeValid && isRightTreeValid;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+'''
+
+
+
+
+    
+
+
+
+
+

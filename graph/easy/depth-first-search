@@ -1,0 +1,16 @@
+
+# Time: O(v + e)    Space: O(v)
+
+class Node:
+    def __init__(self, name):
+        self.children = ['B', 'C']
+        self.name = name    # root node of the graph
+    
+    def addChildren(self, name):
+        self.children.append(Node(name))
+
+    def depthFirstSearch(self, array):
+        array.append(self.name)    # A
+        for child in self.children:
+            child.depthFirstSearch(array)
+        return

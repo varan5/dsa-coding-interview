@@ -1,0 +1,128 @@
+
+# Time: O(n)    Space: O(n)
+
+class BinaryTree:
+    def __init__(self, value):
+        self.value = value
+        self.left = None
+        self.right = None
+
+def branchSums(tree):
+    sumsArray = []
+    calculateBranchSums(tree, sumsArray, 0)
+    return sumsArray
+
+def calculateBranchSums(tree, sumsArray, runningSum):
+    if tree is None:    # base case for recursion, tree is empty --> just return 
+        return 
+
+    runningSum += tree.value
+    if tree.left is None and tree.right is None:    # branch sums found
+        sumsArray.append(runningSum)
+    calculateBranchSums(tree.left, sumsArray, runningSum)
+    calculateBranchSums(tree.right, sumsArray, runningSum)
+
+
+
+# More Practice
+'''
+class BinaryTree:
+    def __init__(self, value):
+        self.value = value
+        self.left = None
+        self.right = None
+    
+def branchSums(tree):
+    sumsArray = []
+    calculateBranchSums(tree, sumsArray, 0)
+    return sumsArray
+
+def calculateBranchSums(tree, sumsArray, runningSum):
+    if tree is None:
+        return
+    
+    runningSum += tree.value
+    if tree.left is None and tree.right is None:
+        sumsArray.append(runningSum)
+
+    calculateBranchSums(tree.left, sumsArray, runningSum)
+    calculateBranchSums(tree.right, sumsArray, runningSum)
+
+
+
+
+
+
+class BinaryTree:
+    def __init__(self, value):
+        self.value = value
+        self.left = None
+        self.right = None
+
+
+def branchSums(tree):
+    sumsArray = []
+    calculateBranchSums(tree, sumsArray, 0)
+    return sumsArray
+
+def calculateBranchSums(tree, sumsArray, runningSum):
+    if tree is None:
+        return 
+     
+    runningSum += tree.value
+    if tree.left is None and tree.right is None:
+        sumsArray.append(runningSum)
+
+    calculateBranchSums(tree.left, sumsArray, runningSum)
+    calculateBranchSums(tree.right, sumsArray, runningSum)
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+'''

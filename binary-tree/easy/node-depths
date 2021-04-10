@@ -1,0 +1,18 @@
+
+class BinaryTree:
+    def __init__(self, value):
+        self.value = value
+        self.left = None
+        self.right = None
+    
+
+#Time: O(n)  , where 'n' is the number of nodes in the binary tree    
+# Space: O(h), where 'h' is the height of the binary tree   
+
+def nodeDepths(tree, depths=0):
+    if tree is None:
+        return 
+    
+    nodeDepths(tree.left, depths +1)
+    nodeDepths(tree.right, depths +1)
+    return depths
