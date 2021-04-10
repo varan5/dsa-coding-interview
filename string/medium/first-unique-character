@@ -1,0 +1,22 @@
+
+def firstUniqueCharacter(string):
+    map = {}
+    x = 0
+    while x != len(string):
+        if string[x] not in map:
+            map[string[x]] = x
+        else:
+            map[string[x]] = -1
+        x += 1
+
+    minValue = float('inf')
+    orignalMin = minValue
+    for char in string:
+        if map.get(char) > -1 && map.get(char) < minValue:
+            minValue = map.get(char)
+
+    if minValue == orignalMin:
+        return -1
+    else:
+        return minValue 
+
