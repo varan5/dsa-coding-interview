@@ -1,0 +1,20 @@
+
+# Time (Worst/Average): O(n) --> where 'n' is the length of the linked list
+# Time (Best):          O(1) --> this case is true, if the list has 0 or 1 nodes and there is no need to traverse the entire list
+# Space:                O(1) --> no extra memory is used, apart from some variables, using constant space
+
+class LinkedList:
+    def __init__(self, data):
+        self.data = data
+        self.next = next
+
+
+def display_linked_list(head):
+    if head is None:
+        print('None')
+    if head.next is None:
+        print(head.data)
+    current_node = head
+    while current_node is not None:
+        print(current_node.data)
+        current_node = current_node.data
