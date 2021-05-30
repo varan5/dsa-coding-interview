@@ -1,0 +1,9 @@
+def isNumberPresent(array, number):
+	isNumberPresent = False
+	for element in array:
+		if number in array:
+			isNumberPresent = True
+			return isNumberPresent
+	
+	return isNumberPresent
+			

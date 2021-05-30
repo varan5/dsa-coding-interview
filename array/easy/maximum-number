@@ -1,0 +1,8 @@
+
+def findMaximumNumber(array):
+    maximumNumber = 0
+    for element in array:
+        if element > maximumNumber:
+            maximumNumber = element
+
+    return maximumNumber
