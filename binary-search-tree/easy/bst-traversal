@@ -1,0 +1,33 @@
+
+# Time: O(n)  - As we will traverse all the nodes of the tree, where 'n' is the number of nodes of the tree
+# Space: O(d) - The call stack will have d (depth of the tree) levels unless it reaches the base case
+# Note: If we will use our own array, instead of directly recieving it, it will increase O(n) space in the current space complexity
+
+
+def inorderTraversal(tree, array):
+	if tree is None:
+		return array
+	
+	inorderTraversal(tree.left, array)
+	array.append(tree.value)
+	inorderTraversal(tree.right, array)
+	
+
+def preorderTraversal(tree, array):
+	if tree is None:
+		return array
+	
+	array.append(tree.value)
+	preorderTraversal(tree.left, array)
+	preorderTraversal(tree.right, array)
+	
+
+def postorderTraversal(tree, array):
+	if tree is None:
+		return array
+	
+	postorderTraversal(tree.left, array)
+	postorderTraversal(tree.right, array)
+	array.append(tree.value)
+	
+	
