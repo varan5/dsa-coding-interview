@@ -1,0 +1,36 @@
+// Leetcode descuss link: https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/discuss/1279772/100-Java-Clean-Code-With-Explanation-and-Time-Space-Complexities-Two-Pointer
+
+// Complexities
+// TIME: O(n): Where n is the number of elements in the array
+// SPACE: O(1): Since we are creating an array of size 2 (constant)
+
+class Solution {
+
+public int[] twoSum(int[] array, int targetSum) {
+	// Base cases
+    // If array.length < 2, so the size of the array can be 0 or 1.
+    // With 0 or 1 elements, we cannot solve the TWO SUM PROBLEM, because we need atleast 2 elements to play around.
+    // So simply return array with [-1, -1].
+    // if array is null, it means array is not having any elements, so lets return the same result [-1, -1]
+    if (array.length < 2 || array == null) 
+        return new int[] {-1, -1};
+    
+    // Starting index = 0, end index = last element -1
+    int startIndex = 0;
+    int endIndex = array.length -1;
+    int potentialSum;
+    
+    // This condition is used when we perform TWO POINTER APPROACH, it is similar to Binary Search condition
+    while (startIndex < endIndex) {
+        potentialSum = array[startIndex] + array[endIndex];
+        if (potentialSum == targetSum) {
+            return new int[] {startIndex +1, endIndex +1};  // Elements found, so lets return their index +1 (since index starting from 0)
+        } else if (potentialSum > targetSum) {
+            endIndex --;  // potentialSum is greater, so lets decrease it by moving decreasing endIndex pointer by 1
+        } else {
+            startIndex ++;  // potentialSum is less, so lets increase the startIndex pointer by 1
+        }
+    }
+    return new int[] {-1, -1};  // Noting found, so lets return an empty array
+}
+}
