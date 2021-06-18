@@ -1,0 +1,38 @@
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode() {}
+ *     ListNode(int val) { this.val = val; }
+ *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+ * }
+ */
+
+// Algorithmic Complexities
+// Time:  O(n) - Where 'n' is the number of nodes in the linked list
+// Space: O(1) - Since, the variables which we have used, have a constant space complexity
+
+class Solution {
+    public ListNode deleteDuplicates(ListNode head) {
+        
+        // Base case
+        // if head is null, it means no node, so return 
+        // if head.next is null, it means only one element present, so there is no question of duplication
+        if (head == null || head.next == null) 
+            return head;
+        
+        ListNode currentNode = head;
+        while (currentNode.next != null) {
+            if (currentNode.val == currentNode.next.val) {
+                currentNode.next = currentNode.next.next;
+            }
+            else {
+                currentNode = currentNode.next;    
+            } 
+            
+        }
+        return head;        
+    }
+    
+}
